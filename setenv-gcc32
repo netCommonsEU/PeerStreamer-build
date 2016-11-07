@@ -1,0 +1,6 @@
+export CFLAGS=" -m32 "
+export CPPFLAGS=" -m32 "
+export LDFLAGS="-m32 -L/usr/lib32/ -L/usr/lib/gcc/x86_64-linux-gnu/4.6/32 -L/usr/lib32/debug/ "
+export TARGET=elf32-i386
+export HOSTARCH="i386-linux"
+# *ubuntu users may want to install the package gcc-multilib

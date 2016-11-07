@@ -1,0 +1,17 @@
+ffmpeg.install
+ffmpeg-install
+ffmpeg.cflags
+ffmpeg.ldflags
+ffmpeg.ldlibs
+libogg-install
+libogg
+libvorbis-install
+libvorbis
+mp3lame-install
+mp3lame
+x264-install
+pjproject
+pjproject-install
+*.cscope
+*.swp
+pjproject*
