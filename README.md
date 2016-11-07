@@ -4,7 +4,7 @@ PeerStreamer build system
 This is the PeerStreamer build system that automatizes the build and installation
 process of PeerStreamer.
 
-For the moment perform all the operation using the D3.2-testing branch:
+For the moment perform all the operations using the D3.2-testing branch:
 
 `git clone -b D3.2-testing
 https://github.com/netCommonsEU/PeerStreamer-build.git`
