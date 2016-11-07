@@ -1,0 +1,12 @@
+[submodule "Streamers"]
+	path = Streamers
+	url = https://github.com/netCommonsEU/PeerStreamer.git
+	branch = D3.2-testing
+[submodule "THIRDPARTY-LIBS/GRAPES"]
+	path = THIRDPARTY-LIBS/GRAPES
+	url = https://github.com/netCommonsEU/PeerStreamer-grapes.git
+	branch = D3.2-testing
+[submodule "THIRDPARTY-LIBS/NAPA-BASELIBS"]
+	path = THIRDPARTY-LIBS/NAPA-BASELIBS
+	url = https://github.com/netCommonsEU/PeerStreamer-napa-baselibs.git
+	branch = D3.2-testing
