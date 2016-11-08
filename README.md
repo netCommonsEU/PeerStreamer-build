@@ -36,4 +36,16 @@ then execute the following command for starting the build process:
 
 ## Install
 
-Work in progress
+Use the following command for installing PeerStreamer (root permissions
+required):
+
+`make install`
+
+the command will copy the executable in the directory /opt/peerstreamer/ and
+will create a symbolic link pointing to the executable in
+/usr/local/bin/peerstreamer.
+
+For uninstalling PeerStreamer just execute:
+
+`sudo make uninstall`
+
