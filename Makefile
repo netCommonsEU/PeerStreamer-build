@@ -51,9 +51,9 @@ XSTATIC ?= -static
 
 
 #.PHONY: $(THIRDPARTYLIBS) update clean ml-chunkstream $(DIR)
-.PHONY: $(THIRDPARTYLIBS) update clean ml $(DIR)
+.PHONY: $(THIRDPARTYLIBS) update clean ml
 
-all: $(DIR)
+all: update ml
 
 # Only ml currenlty supported
 #simple: Streamers/streamer-udp-grapes$(EXE)
@@ -176,8 +176,8 @@ distclean:
 
 pack:  $(DIR)-stripped.tgz
 
-$(DIR):
-	rm -rf $(DIR) $(DIR).tgz $(DIR)-stripped.tgz
+#$(DIR):
+#	rm -rf $(DIR) $(DIR).tgz $(DIR)-stripped.tgz
 #$(DIR):  Streamers/streamer-ml-monl-chunkstream$(XSTATIC)$(EXE) ChunkerPlayer/chunker_player/chunker_player$(EXE)
 #	rm -rf $(DIR) $(DIR).tgz $(DIR)-stripped.tgz
 #	mkdir $(DIR)
@@ -199,29 +199,29 @@ $(DIR):
 #	cp channels.conf $(DIR)
 #	cp README $(DIR)
 
-$(DIR).tgz: $(DIR)
-	tar czf $(DIR).tgz $(DIR)
+#$(DIR).tgz: $(DIR)
+#	tar czf $(DIR).tgz $(DIR)
 
-$(DIR)-stripped.tgz: $(DIR).tgz
-ifeq (,$(findstring mingw32,$(HOSTARCH)))
-	cd $(DIR) && strip chunker_streamer$(EXE)
-endif
-	cd $(DIR) && strip streamer-ml-monl-chunkstream$(XSTATIC)$(EXE) chunker_player$(EXE)
-ifeq (,$(findstring mingw32,$(HOSTARCH)))
-	tar czf $(DIR)-stripped.tgz $(DIR)
-else
-	zip -r $(DIR).zip $(DIR)
-endif
+#$(DIR)-stripped.tgz: $(DIR).tgz
+#ifeq (,$(findstring mingw32,$(HOSTARCH)))
+#	cd $(DIR) && strip chunker_streamer$(EXE)
+#endif
+#	cd $(DIR) && strip streamer-ml-monl-chunkstream$(XSTATIC)$(EXE) chunker_player$(EXE)
+#ifeq (,$(findstring mingw32,$(HOSTARCH)))
+#	tar czf $(DIR)-stripped.tgz $(DIR)
+#else
+#	zip -r $(DIR).zip $(DIR)
+#endif
 
-install: $(DIR)
+install:
 	mkdir -p /opt/peerstreamer
-	cp -r $(DIR)/* /opt/peerstreamer
-	ln -f -s /opt/peerstreamer/player.sh /usr/local/bin/peerstreamer
+	cp Streamers/peerstreamer /opt/peerstreamer/
+	ln -f -s /opt/peerstreamer/peerstreamer  /usr/local/bin/peerstreamer
 #	cp -r Installer/Lin/usr/share /usr
 
 uninstall:
-	rm -rf /opt/peerstreamer
 	rm -f /usr/local/bin/peerstreamer
+	rm -f /opt/peerstreamer/peerstreamer
 #	rm -rf /usr/share/applications/peerstreamer.desktop
 #	rm -rf /usr/share/menu/peerstreamer
 #	rm -rf /usr/share/pixmaps/peerstreamer.xpm
