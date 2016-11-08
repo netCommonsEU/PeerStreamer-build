@@ -39,7 +39,7 @@ then execute the following command for starting the build process:
 Use the following command for installing PeerStreamer (root permissions
 required):
 
-`make install`
+`sudo make install`
 
 the command will copy the executable in the directory /opt/peerstreamer/ and
 will create a symbolic link pointing to the executable in
