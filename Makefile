@@ -148,6 +148,7 @@ Streamers/streamer-ml-monl-grapes$(XSTATIC)$(EXE): $(THIRDPARTYLIBS)
 
 peerviewer:
 	$(MAKE) -C PeerViewer
+	$(MAKE) -C PeerViewer packweb
 
 # Assume git is present
 prepare:

@@ -11,8 +11,8 @@ https://github.com/netCommonsEU/PeerStreamer-build.git`
 
 ## Requirements
 
-The following has been tested on Ubuntu 16.04 LTS but any Linux distribution with
-proper developing tools installed should work.
+The following has been tested on Ubuntu 16.04 LTS (x86_64) but any Linux
+distribution with proper developing tools installed should work.
 
 On ubuntu execute the following command for installing the tools required for
 building and testing PeerStreamer:
@@ -30,14 +30,14 @@ The PeerStreamer build system can be used also for building and installing the
 PeerStreamer web front-end [PeerViewer]
 (https://github.com/netCommonsEU/PeerStreamer-peerviewer). For doing this you
 need the development version of the glib2.0 and gstreamer1.0 libraries and a
-properly configured Go development environment.
+properly configured Go and Node.js development environments.
 
 On ubuntu you can execute the following command for installing the two required
 libraries:
 
 `sudo apt-get install libglib2.0-dev libgstreamer1.0-dev`
 
-and the following commands for configuring the Go development environment:
+For configuring the Go development environment:
 
 ```
 wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
@@ -49,6 +49,16 @@ export GOPATH=~/go_workspace/ # Put this in ~/.profile to make it permanent
 
 Refer to the [official Go documentation]
 (https://golang.org/doc/install) for up-to-date instructions.
+
+Finally, for configuring the Node.js development environment:
+
+```
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+Refer to the [official Node.js documentation]
+(https://nodejs.org/en/download/package-manager/) for up-to-date instructions.
 
 
 ## Build
