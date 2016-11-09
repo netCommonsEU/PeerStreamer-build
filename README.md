@@ -76,6 +76,7 @@ and, finally, the following command if you want to compile also PeerViewer (this
 will generate the executable PeerViewer/peerviewer):
 
 `make peerviewer`
+`sudo make peerviewer_pack`
 
 ## Install
 
