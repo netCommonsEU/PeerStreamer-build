@@ -77,7 +77,7 @@ will generate the executable PeerViewer/peerviewer):
 
 ```
 make peerviewer
-sudo make peerviewer_pack
+sudo -E make peerviewer_pack
 ```
 
 ## Install
