@@ -144,6 +144,10 @@ Streamers/streamer-ml-monl-grapes$(XSTATIC)$(EXE): $(THIRDPARTYLIBS)
 
 #ChunkerPlayer/chunker_player/chunker_player$(EXE): $(THIRDPARTYLIBS)
 #	cd ChunkerPlayer && $(FLAGS_CHUNKER) ./build_ul.sh
+#
+
+peerviewer:
+	$(MAKE) -C PeerViewer
 
 # Assume git is present
 prepare:
@@ -215,13 +219,28 @@ pack:  $(DIR)-stripped.tgz
 
 install:
 	mkdir -p /opt/peerstreamer
+ifneq (,$(wildcard Streamers/peerstreamer))
 	cp Streamers/peerstreamer /opt/peerstreamer/
 	ln -f -s /opt/peerstreamer/peerstreamer  /usr/local/bin/peerstreamer
+endif
+ifneq (,$(wildcard PeerViewer/peerviewer))
+	cp PeerViewer/peerviewer /opt/peerstreamer/
+	ln -f -s /opt/peerstreamer/peerviewer  /usr/local/bin/peerviewer
+endif
 #	cp -r Installer/Lin/usr/share /usr
 
 uninstall:
+ifneq (,$(wildcard /usr/local/bin/peerstreamer))
 	rm -f /usr/local/bin/peerstreamer
 	rm -f /opt/peerstreamer/peerstreamer
+endif
+ifneq (,$(wildcard /usr/local/bin/peerviewer))
+	rm -f /usr/local/bin/peerstreamer
+	rm -f /opt/peerstreamer/peerstreamer
+endif
+ifneq (,$(wildcard /opt/peerstreamer))
+	rm -rf /opt/peerstreamer
+endif
 #	rm -rf /usr/share/applications/peerstreamer.desktop
 #	rm -rf /usr/share/menu/peerstreamer
 #	rm -rf /usr/share/pixmaps/peerstreamer.xpm

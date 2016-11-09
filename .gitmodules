@@ -10,3 +10,7 @@
 	path = THIRDPARTY-LIBS/NAPA-BASELIBS
 	url = https://github.com/netCommonsEU/PeerStreamer-napa-baselibs.git
 	branch = D3.2-testing
+[submodule "PeerViewer"]
+	path = PeerViewer
+	url = https://github.com/netCommonsEU/PeerStreamer-peerviewer
+	branch = D3.2-testing
