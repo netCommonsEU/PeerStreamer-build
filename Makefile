@@ -290,13 +290,23 @@ endif
 #endif
 
 testing.tar.gz:
+ifneq (,$(wildcard testing))
+	rm -rf testing
+endif
 	wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B5RVMOFu09QCWGVub3pnSTJJbW8' -O testing.tar.gz
 
 download_tests: testing.tar.gz
+ifeq (,$(wildcard testing/Makefile))
 	tar xzf testing.tar.gz
+endif
 
-test_file_ouptut:
-	$(MAKE) -C testing test_file_ouptut
+testing/Makefile: download_tests
 
-test_ffplay_live_playback:
+test_file_ouptut: testing/Makefile
+	$(MAKE) -C testing test_file_output
+
+test_ffplay_live_playback: testing/Makefile
 	$(MAKE) -C testing test_ffplay_live_playback
+
+test_peerviewer_basic: testing/Makefile
+	$(MAKE) -C testing test_peerviewer_basic

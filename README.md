@@ -95,3 +95,7 @@ For uninstalling PeerStreamer and PeerViewer just execute:
 
 `sudo make uninstall`
 
+## Testing
+
+For basic PeerStreamer/PeerViewer tests see the [testing instructions]
+(https://github.com/netCommonsEU/PeerStreamer/blob/D3.2-testing/testing/Testing.md)
