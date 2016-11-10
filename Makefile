@@ -288,3 +288,7 @@ endif
 #installer-OSX: $(DIR)
 #	cd Installer/OSX/ && tar zfx OSX_template.tgz && ./makeApp.sh $(DIR) && rm -rf napa-template.app && make VERSION=$(REV) && mv $(REV).dmg ../../
 #endif
+
+download_tests: testing.tar.gz
+	wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B5RVMOFu09QCWGVub3pnSTJJbW8' -O testing.tar.gz
+	tar xzf testing.tar.gz
