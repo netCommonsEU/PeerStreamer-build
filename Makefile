@@ -310,3 +310,9 @@ test_ffplay_live_playback: testing/Makefile
 
 test_peerviewer_basic: testing/Makefile
 	$(MAKE) -C testing test_peerviewer_basic
+
+start_peerviewer_webserver: testing/Makefile
+	$(MAKE) -C testing start_peerviewer_webserver
+
+test_peerviewer_webm: testing/Makefile
+	$(MAKE) -C testing test_peerviewer_webm

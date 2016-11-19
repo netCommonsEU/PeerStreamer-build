@@ -35,7 +35,7 @@ properly configured Go and Node.js development environments.
 On ubuntu you can execute the following command for installing the two required
 libraries:
 
-`sudo apt-get install libglib2.0-dev libgstreamer1.0-dev`
+`sudo apt-get install libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev`
 
 For configuring the Go development environment:
 
