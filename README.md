@@ -7,8 +7,7 @@ process of PeerStreamer.
 For the moment perform all the operations using the D3.2-testing branch:
 
 ```
-git clone -b D3.2-testing
-https://github.com/netCommonsEU/PeerStreamer-build.git
+git clone -b D3.2-testing https://github.com/netCommonsEU/PeerStreamer-build.git
 cd PeerStreamer-build
 ```
 
