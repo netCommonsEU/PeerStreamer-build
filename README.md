@@ -8,6 +8,7 @@ For the moment perform all the operations using the D3.2-testing branch:
 
 `git clone -b D3.2-testing
 https://github.com/netCommonsEU/PeerStreamer-build.git`
+`cd PeerStreamer-build`
 
 ## Requirements
 
@@ -17,9 +18,11 @@ distribution with proper developing tools installed should work.
 On ubuntu execute the following command for installing the tools required for
 building and testing PeerStreamer:
 
-`sudo apt-get install build-essential libssl-dev libncurses5-dev unzip gawk
+```
+sudo apt-get install git build-essential libssl-dev libncurses5-dev unzip gawk
 autoconf gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-gstreamer1.0-plugins-bad ffmpeg vlc`
+gstreamer1.0-plugins-bad ffmpeg vlc
+```
 
 The build system handles all the libraries required by PeerStreamer (NAPA and
 GRAPES) and PeerStreamer itself as git submodules.
@@ -55,6 +58,7 @@ Finally, for configuring the Node.js development environment:
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo npm install webpack -g
 ```
 
 Refer to the [official Node.js documentation]
