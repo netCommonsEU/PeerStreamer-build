@@ -20,9 +20,7 @@ On ubuntu execute the following command for installing the tools required for
 building and testing PeerStreamer:
 
 ```
-sudo apt-get install git build-essential libssl-dev libncurses5-dev unzip gawk
-autoconf gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-gstreamer1.0-plugins-bad ffmpeg vlc
+sudo apt-get install git build-essential libssl-dev libncurses5-dev unzip gawk autoconf gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad ffmpeg vlc
 ```
 
 The build system handles all the libraries required by PeerStreamer (NAPA and
