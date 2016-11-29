@@ -238,8 +238,8 @@ ifneq (,$(wildcard /usr/local/bin/peerstreamer))
 	rm -f /opt/peerstreamer/peerstreamer
 endif
 ifneq (,$(wildcard /usr/local/bin/peerviewer))
-	rm -f /usr/local/bin/peerstreamer
-	rm -f /opt/peerstreamer/peerstreamer
+	rm -f /usr/local/bin/peerviewer
+	rm -f /opt/peerstreamer/peerviewer
 endif
 ifneq (,$(wildcard /opt/peerstreamer))
 	rm -rf /opt/peerstreamer
