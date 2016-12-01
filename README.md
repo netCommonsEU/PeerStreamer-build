@@ -26,7 +26,7 @@ distribution with proper developing tools installed should work.
 On ubuntu execute the following command for installing the tools required for
 building and testing PeerStreamer:
 
-```
+```bash
 sudo apt-get install git build-essential libssl-dev libncurses5-dev unzip gawk autoconf gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad ffmpeg vlc
 ```
 
@@ -50,11 +50,13 @@ properly configured Go and Node.js development environments.
 On ubuntu you can execute the following command for installing the two required
 libraries:
 
-`sudo apt-get install libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev`
+```bash
+sudo apt-get install libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+```
 
 For configuring the Go development environment:
 
-```
+```bash
 wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.7.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin # Put this in ~/.profile to make it permanent
@@ -67,7 +69,7 @@ Refer to the [official Go documentation]
 
 Finally, for configuring the Node.js development environment:
 
-```
+```bash
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install webpack -g
@@ -91,7 +93,7 @@ the executable Streamers/peerstreamer:
 and, finally, the following command if you want to compile also PeerViewer (this
 will generate the executable PeerViewer/peerviewer):
 
-```
+```bash
 make peerviewer
 sudo -E make peerviewer_pack
 ```
