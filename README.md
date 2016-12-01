@@ -13,6 +13,13 @@ cd PeerStreamer-build
 
 ## Requirements
 
+>### *NOTE*
+PeerViewer requires GStreamer v1.8 or higher. This requirements is
+not a problem on Ubuntu 16.04 LTS but it is not satisfied, for example, by
+Debian Jessie that is currently shipped with GStreamer v1.4. If you want to use
+PeerViewer on Debian Jessie you must install GStreamer from the testing
+repositories (e.g., Stretch repository).
+
 The following has been tested on Ubuntu 16.04 LTS (x86_64) but any Linux
 distribution with proper developing tools installed should work.
 
@@ -27,6 +34,12 @@ The build system handles all the libraries required by PeerStreamer (NAPA and
 GRAPES) and PeerStreamer itself as git submodules.
 
 ### Requirements for PeerViewer
+
+>### *PeerViewer on Raspberry Pi 2/3*
+Building and installing PeerViewer on Raspberry Pi 2/3 requires a different
+procedure than the one described below. The instructions for using PeerViewer on
+Raspberry Pi 2/3 are reported
+[here](https://github.com/netCommonsEU/PeerStreamer-peerviewer/blob/D3.2-testing/docs/raspberry_build.md).
 
 The PeerStreamer build system can be used also for building and installing the
 PeerStreamer web front-end [PeerViewer]
