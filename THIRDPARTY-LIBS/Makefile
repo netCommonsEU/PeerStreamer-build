@@ -1,5 +1,11 @@
 UNAME := $(shell uname)
 
+# Quick and dirty fix for enabling OperWRT cross-compilation
+ifneq ($(HOSTARCH),)
+CC := $(HOSTARCH)-gcc
+LD := $(HOSTARCH)-ld
+endif
+
 THIRDPARTYLIBS = $(shell pwd)
 #NAPA-LIBS = NAPA-BASELIBS/monl/libmon.a NAPA-BASELIBS/ml/libml.a
 #GRAPES-LIBS = GRAPES/src/libgrapes.a
@@ -143,10 +149,14 @@ all: GRAPES-build NAPA-build
 #GRAPES-build: ffmpeg-install pjproject 
 #	$(FLAGS_GRAPES) FFDIR=$(THIRDPARTYLIBS)/ffmpeg $(MAKE) PJDIR=$(THIRDPARTYLIBS)/pjproject -C GRAPES || { echo "Error compiling GRAPES" && exit 1; }
 GRAPES-build:
+ifeq ($(HOSTARCH),)
 	$(FLAGS_GRAPES) $(MAKE) -C GRAPES || { echo "Error compiling GRAPES" && exit 1; }
+else
+	$(FLAGS_GRAPES) $(MAKE) -C GRAPES CC=$(CC) LD=$(LD) || { echo "Error compiling GRAPES" && exit 1; }
+endif
 
 NAPA-build:
-	cd NAPA-BASELIBS && $(ALTO_OPTION) ./build_all.sh -q
+	cd NAPA-BASELIBS && $(ALTO_OPTION) HOSTARCH=$(HOSTARCH) ./build_all.sh -q
 
 clean:
 	$(MAKE) -C GRAPES clean

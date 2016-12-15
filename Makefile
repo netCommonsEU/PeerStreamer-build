@@ -62,7 +62,7 @@ ml: Streamers/streamer-ml-monl-grapes$(XSTATIC)$(EXE)
 #ml-chunkstream: Streamers/streamer-ml-monl-chunkstream$(XSTATIC)$(EXE) ChunkerPlayer/chunker_player/chunker_player$(EXE)
 
 $(THIRDPARTYLIBS):
-	$(MAKE) -C $(THIRDPARTYLIBS) || { echo "Error preparing third party libs" && exit 1; }
+	$(MAKE) -C $(THIRDPARTYLIBS) HOSTARCH=$(HOSTARCH) || { echo "Error preparing third party libs" && exit 1; }
 
 #ifndef NOGIT
 update:
@@ -119,7 +119,7 @@ Streamers/streamer-ml-monl-grapes$(XSTATIC)$(EXE): $(THIRDPARTYLIBS)
 	--with-napa=$(THIRDPARTYLIBS)/NAPA-BASELIBS/ --with-libevent=$(THIRDPARTYLIBS)/NAPA-BASELIBS/3RDPARTY-LIBS/libevent \
 	--with-net-helper=ml \
 	--with-static=$(STATIC)
-	$(MAKE) -C Streamers
+	$(MAKE) -C Streamers HOSTARCH=$(HOSTARCH)
 
 #Streamers/streamer-udp-chunkstream$(EXE): $(THIRDPARTYLIBS)
 #	cd Streamers && ./configure \
