@@ -1,6 +1,10 @@
 PeerStreamer build system
 ===========================
 
+>### *PeerStreamer on OpenWRT*
+If you are interested in building PeerStreamer for OpenWRT, please follow the
+steps described [here](docs/openwrt_build.md).
+
 This is the PeerStreamer build system that automatizes the build and installation
 process of PeerStreamer.
 
